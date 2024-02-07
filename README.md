@@ -1,13 +1,29 @@
 gimp-plugin-vtf
 ===============
 
-A plugin to open and save vtf files in GIMP.
+A plugin to open and save VTF files in GIMP on Linux.
 
-Developed by [lxndr](https://github.com/lxndr).
+Originally developed by [lxndr](https://github.com/lxndr), with additional fixes & changes to ensure compatibility on Linux.
 
 ## Installation
-If you are using ArchLinux, there is a [PKGBUILD](https://gist.github.com/Rahix/a297457945ab236551c9ffbe5f6b9052).
-For all other systems use the following instructions:
+
+### Arch Linux
+
+There is a PKGBUILD included with the repository.
+
+Clone the git repositroy:
+
+```console
+git clone https://github.com/linux-source-tools/gimp-plugin-vtf.git
+```
+
+Then, run `makepkg`:
+
+```console
+makepkg -s PKGBUILD
+```
+
+### Debian / Ubuntu
 
 Clone the git repository into a folder you want to save it to:
 
@@ -25,7 +41,7 @@ Install the required libraries:
 
 - `libsquish0`
 
-On Debian-based distributions you can install all of these with:
+You can install all of these with:
 
 ```bash
 sudo apt install libgimp2.0-dev liblcms2-dev libsquish-dev libsquish0 libboost1.74-dev  libboost-iostreams-dev     
@@ -37,4 +53,6 @@ sudo apt install libgimp2.0-dev liblcms2-dev libsquish-dev libsquish0 libboost1.
 make
 ```
 
-After compiling, move `file-vtf` to `~/.gimp-2.8/plug-ins/`.
+After compiling, move `file-vtf` to your GIMP plugins folder, such as `/usr/lib/gimp/2.0/plug-ins/`.
+
+The final path should be `/usr/lib/gimp/2.0/plug-ins/file-vtf`.
